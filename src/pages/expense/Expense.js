@@ -33,12 +33,13 @@ const Expense = () => {
     const [expenseList, setExpenseList] = useState([]);
     const [error, setError] = useState(null);
     const [expenseTypeFilter, setExpenseTypeFilter] = useState('all')
+    const uid = auth.user._id
     console.log(error)
     useEffect(() => {
         const getExpenses = async () => {
             try {
                 const expList = await axios.post(R_EXP_ALL_URL, {
-                    userid: auth.user._id,
+                    userid: uid,
                     frequency,
                     firstDate,
                     secondDate,
@@ -54,7 +55,7 @@ const Expense = () => {
             }
         }
         getExpenses()
-    }, [userid, frequency, firstDate, secondDate, categoryFilter, expenseTypeFilter])
+    }, [uid, frequency, firstDate, secondDate, categoryFilter, expenseTypeFilter])
 
     return (
         <>
