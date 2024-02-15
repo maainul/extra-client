@@ -44,13 +44,6 @@ const ExpenseTypes = () => {
     const [limit, setLimit] = useState('10')
 
 
-    console.log("$$$$$$$$$$$$$$ numberOfPage$$$$$$$$$$$$$$$$$$$$$$$")
-    console.log(numberOfPage)
-    console.log(limit)
-    console.log("$$$$$$$$$$$$$$ numberOfPage$$$$$$$$$$$$$$$$$$$$$$$")
-
-
-
     // All Expesne Tyles List
     const [expenseTypeList, setExpenseTypeList] = useState([])
 
@@ -68,7 +61,7 @@ const ExpenseTypes = () => {
     useEffect(() => {
         const getExpTypsgetExpTyps = async () => {
             try {
-                const response = await axios.get(`http://localhost:8081/api/v1/expense-type/read/all?sort=${sorting}&search=${search}&page=${page}&limit=${limit}`);
+                const response = await axios.get(`${R_EX_TYP_URL}?sort=${sorting}&search=${search}&page=${page}&limit=${limit}`);
                 setExpenseTypeList(response.data.data || [])
                 setNumberOfPage(response.data.numOfPage)
                 setErrors(null)

@@ -33,7 +33,7 @@ const Expense = () => {
     const [expenseList, setExpenseList] = useState([]);
     const [error, setError] = useState(null);
     const [expenseTypeFilter, setExpenseTypeFilter] = useState('all')
-
+    console.log(error)
     useEffect(() => {
         const getExpenses = async () => {
             try {

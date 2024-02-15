@@ -1,22 +1,21 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import { useAuth } from 'context/authContext';
-import toast from 'react-hot-toast';
+// import { useAuth } from 'context/authContext';
 import { UserMenu } from './UserMenu';
 import SideNav from 'components/sideNavComp/SideNav';
 
 const UserSidebar = () => {
-    const [auth, setAuth] = useAuth();
+    // const [auth, setAuth] = useAuth();
     const location = useLocation()
-    const handleLogout = () => {
-        setAuth({
-            ...auth,
-            user: null,
-            token: '',
-        })
-        localStorage.removeItem('auth')
-        toast.success("Logout Successfully")
-    }
+    // const handleLogout = () => {
+    //     setAuth({
+    //         ...auth,
+    //         user: null,
+    //         token: '',
+    //     })
+    //     localStorage.removeItem('auth')
+    //     toast.success("Logout Successfully")
+    // }
     return (
         <div >
             {UserMenu.map((menu) => {
