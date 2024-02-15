@@ -54,7 +54,7 @@ const Expense = () => {
             }
         }
         getExpenses()
-    }, [frequency, firstDate, secondDate, categoryFilter, expenseTypeFilter])
+    }, [userid, frequency, firstDate, secondDate, categoryFilter, expenseTypeFilter])
 
     return (
         <>

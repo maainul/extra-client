@@ -70,7 +70,7 @@ const ExpenseTypes = () => {
             }
         }
         getExpTypsgetExpTyps()
-    }, [sorting, search])
+    }, [sorting, search, page, limit])
 
 
     // Check if editExpenseTypeData is provided and set the form fields accordingly
